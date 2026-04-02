@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Svadobny web - Robert & Alexandra
 
-## Getting Started
+Svadobna stranka pre svadbu Roberta Dufalu a Alexandry Durajkovej, ktora sa bude konat 25. septembra 2026 v Bardejove.
 
-First, run the development server:
+## Technologie
+
+- **Next.js 16** - React framework
+- **Tailwind CSS 4** - Styling
+- **Google Sheets** - Ukladanie RSVP odpovedi cez Apps Script
+
+## Funkcie
+
+- Responzivny single-page dizajn
+- RSVP formular s podporou viacerych osob
+- Napojenie na Google Sheets pre spravu hosti
+- Sekcie: Uvod, Nas pribeh, Obrad, Hostina, Organizacia, Ubytovanie, Tipy, Dresscode
+
+## Spustenie lokalne
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Web bezi na http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Konfiguracia
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Vytvor subor `.env.local` s:
 
-## Learn More
+```
+GOOGLE_SCRIPT_URL=https://script.google.com/macros/s/[YOUR_SCRIPT_ID]/exec
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Google Apps Script
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+V Google Sheets vytvor Apps Script cez Rozsirenia -> Apps Script s tymto kodom:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```javascript
+function doGet(e) {
+  if (!e.parameter || !e.parameter.meno) {
+    return ContentService.createTextOutput(JSON.stringify({status: 'ok'}))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
 
-## Deploy on Vercel
+  var ss = SpreadsheetApp.openById('[SPREADSHEET_ID]');
+  var sheet = ss.getSheetByName('RSVP');
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  sheet.appendRow([
+    new Date(),
+    e.parameter.email || '',
+    e.parameter.telefon || '',
+    e.parameter.pocetOsob || '',
+    e.parameter.poradieOsoby || '',
+    e.parameter.meno || '',
+    e.parameter.stravovanie || '',
+    e.parameter.intolerancie || '',
+    e.parameter.alkohol || '',
+    e.parameter.ubytovanie || '',
+    e.parameter.terminUbytovania || '',
+    e.parameter.poznamka || ''
+  ]);
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  return ContentService.createTextOutput(JSON.stringify({success: true}))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+```
+
+## Farby
+
+- Burgundy: `#800020`
+- Cream: `#F7F3EB`
+
+## Deploy
+
+```bash
+npx vercel
+```
+
+## Autor
+
+Vytvorene s pomocou Claude Code
