@@ -7,6 +7,8 @@ interface OsobaData {
   stravovanie: string;
   intolerancie: string;
   alkohol: string;
+  ubytovanie: string;
+  terminUbytovania: string;
 }
 
 interface RSVPData {
@@ -14,8 +16,6 @@ interface RSVPData {
   telefon: string;
   pocetOsob: number;
   osoby: OsobaData[];
-  ubytovanie: string;
-  terminUbytovania: string;
   poznamka: string;
   datum: string;
 }
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     const data: RSVPData = await request.json();
 
     // Validácia
-    if (!data.email || !data.ubytovanie || !data.osoby || data.osoby.length === 0) {
+    if (!data.email || !data.osoby || data.osoby.length === 0) {
       return NextResponse.json(
         { error: "Chýbajú povinné polia" },
         { status: 400 }
@@ -64,8 +64,8 @@ export async function POST(request: Request) {
         stravovanie: osoba.stravovanie,
         intolerancie: osoba.intolerancie || "",
         alkohol: osoba.alkohol || "",
-        ubytovanie: data.ubytovanie,
-        terminUbytovania: data.terminUbytovania || "",
+        ubytovanie: osoba.ubytovanie || "",
+        terminUbytovania: osoba.terminUbytovania || "",
         poznamka: i === 0 ? (data.poznamka || "") : "", // Poznámka len pri prvej osobe
         datum: data.datum,
       });

@@ -36,9 +36,6 @@ export default function Ceremony() {
               <h3 className="font-playfair text-2xl text-burgundy mb-4">
                 Bazilika sv. Egídia
               </h3>
-              <p className="text-dark/80 mb-4">
-                Bazilika sv. Egídia sa pyšní históriou siahajúcou do 13. storočia a je súčasťou svetového dedičstva UNESCO. V roku 2001 bola povýšená pápežom Jánom Pavlom II. na baziliku minor.
-              </p>
             </div>
 
             <div className="space-y-3">
@@ -57,7 +54,7 @@ export default function Ceremony() {
                   />
                 </svg>
                 <div>
-                  <span className="font-semibold text-dark">Čas</span>
+                  <span className="font-semibold text-dark">Začiatok obradu</span>
                   <p className="text-dark/80">14:00</p>
                 </div>
               </div>

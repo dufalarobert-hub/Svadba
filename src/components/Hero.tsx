@@ -54,7 +54,7 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p className="font-playfair text-xl sm:text-2xl text-dark/80 mb-2">
-          Vydávame sa!
+          Budeme mať svadbu!
         </p>
 
         {/* Date */}

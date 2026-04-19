@@ -1,9 +1,10 @@
 export default function Schedule() {
   const schedule = [
-    { time: "14:00", event: "Obrad v Bazilike sv. Egídia", icon: "church" },
-    { time: "~15:30", event: "Presun na hostinu (vlastnými autami)", icon: "car" },
-    { time: "17:00", event: "Začiatok hostiny v Stodole", icon: "party" },
-    { time: "...", event: "Zábava až do rána", icon: "music" },
+    { time: "15:00", event: "Obrad", icon: "church" },
+    { time: "16:00", event: "Presun do Stodoly", icon: "car" },
+    { time: "16:00 - 17:00", event: "Recepcia", icon: "reception" },
+    { time: "17:15", event: "Príchod novomanželov", icon: "couple" },
+    { time: "17:30", event: "Hostina a začiatok zábavy", icon: "party" },
   ];
 
   const getIcon = (type: string) => {
@@ -42,6 +43,24 @@ export default function Schedule() {
             strokeLinejoin="round"
             strokeWidth={2}
             d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+          />
+        );
+      case "reception":
+        return (
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+          />
+        );
+      case "couple":
+        return (
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
           />
         );
       default:

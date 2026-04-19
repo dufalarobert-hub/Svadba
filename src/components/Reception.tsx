@@ -3,9 +3,6 @@ export default function Reception() {
     <section id="hostina" className="py-20 px-4 bg-white">
       <div className="max-w-4xl mx-auto">
         <h2 className="section-title">Hostina</h2>
-        <p className="section-subtitle">
-          Po obrade sa presunieme do miesta s jedinečnou atmosférou
-        </p>
 
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Info - reversed order on desktop */}
@@ -14,9 +11,6 @@ export default function Reception() {
               <h3 className="font-playfair text-2xl text-burgundy mb-4">
                 Reštaurácia Stodola
               </h3>
-              <p className="text-dark/80 mb-4">
-                Čaká na vás skvelé jedlo pripravené z lokálnych surovín a nezabudnuteľná zábava až do rána. Miesto s kapacitou 200 miest ponúka jedinečnú atmosféru pre našu oslavu.
-              </p>
             </div>
 
             <div className="space-y-3">

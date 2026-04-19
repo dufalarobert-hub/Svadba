@@ -3,9 +3,6 @@ export default function Dresscode() {
     <section id="dresscode" className="py-20 px-4 bg-white">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="section-title">Čo na seba</h2>
-        <p className="section-subtitle">
-          Krátky sprievodca dress codom
-        </p>
 
         <div className="bg-cream p-8 md:p-12 rounded-lg">
           {/* Icons */}
@@ -45,26 +42,16 @@ export default function Dresscode() {
           </div>
 
           <p className="text-xl text-dark mb-6">
-            Preferujeme{" "}
-            <span className="font-playfair font-bold text-burgundy text-2xl">
-              čiernu farbu
-            </span>
+            Nemáme pevne stanovený dress code – chceme, aby ste sa cítili príjemne.
           </p>
           <p className="text-dark/80 mb-8">
-            Elegantná, nadčasová a vždy správna voľba pre večernú oslavu.
+            Budeme však radi, ak váš outfit bude ladený do{" "}
+            <span className="font-playfair font-bold text-burgundy text-xl">
+              tmavých farieb
+            </span>.
           </p>
 
-          {/* White dress note */}
-          <div className="inline-block bg-white px-6 py-4 rounded-lg border border-burgundy/20">
-            <p className="text-dark/80">
-              <span className="text-burgundy font-semibold">Malá prosba od nevesty:</span>
-              <br />
-              Bielu farbu, prosím, necháme pre svadobné šaty.
-              <br />
-              <span className="text-sm text-dark/60">Ďakujeme za pochopenie! 👰</span>
-            </p>
-          </div>
-        </div>
+                  </div>
       </div>
     </section>
   );
