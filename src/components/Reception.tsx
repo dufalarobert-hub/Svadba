@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Reception() {
   return (
     <section id="hostina" className="py-20 px-4 bg-white">
@@ -126,25 +128,15 @@ export default function Reception() {
             </a>
           </div>
 
-          {/* Image placeholder */}
+          {/* Image */}
           <div className="burgundy-frame order-1 md:order-2">
-            <div className="aspect-[4/3] bg-cream flex items-center justify-center">
-              <div className="text-center p-8">
-                <svg
-                  className="w-16 h-16 mx-auto text-burgundy/30 mb-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1}
-                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                  />
-                </svg>
-                <span className="text-burgundy/50 text-sm">Fotka Stodoly</span>
-              </div>
+            <div className="aspect-[4/3] relative">
+              <Image
+                src="/stodola.jpg"
+                alt="Reštaurácia Stodola v Bardejove"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>

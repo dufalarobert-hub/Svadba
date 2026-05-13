@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Ceremony() {
   return (
     <section id="obrad" className="py-20 px-4 bg-cream">
@@ -8,25 +10,15 @@ export default function Ceremony() {
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Image placeholder */}
+          {/* Image */}
           <div className="burgundy-frame">
-            <div className="aspect-[4/3] bg-white flex items-center justify-center">
-              <div className="text-center p-8">
-                <svg
-                  className="w-16 h-16 mx-auto text-burgundy/30 mb-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                  />
-                </svg>
-                <span className="text-burgundy/50 text-sm">Fotka Baziliky sv. Egídia</span>
-              </div>
+            <div className="aspect-[4/3] relative">
+              <Image
+                src="/bazilika.jpg"
+                alt="Bazilika sv. Egídia v Bardejove"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
 
