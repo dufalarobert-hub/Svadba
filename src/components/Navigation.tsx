@@ -30,14 +30,18 @@ export default function Navigation() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-cream/95 backdrop-blur-sm shadow-md py-3"
-          : "bg-transparent py-5"
+          : "bg-black shadow-lg py-4"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo / Names */}
         <a
           href="#uvod"
-          className="font-great-vibes text-2xl text-burgundy hover:text-burgundy-dark transition-colors"
+          className={`font-great-vibes text-2xl transition-colors ${
+            isScrolled
+              ? "text-burgundy hover:text-burgundy-dark"
+              : "text-cream hover:text-white drop-shadow"
+          }`}
         >
           R & A
         </a>
@@ -48,7 +52,11 @@ export default function Navigation() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-dark hover:text-burgundy transition-colors"
+              className={`text-sm font-medium transition-colors ${
+                isScrolled
+                  ? "text-dark hover:text-burgundy"
+                  : "text-cream/90 hover:text-white drop-shadow"
+              }`}
             >
               {item.label}
             </a>

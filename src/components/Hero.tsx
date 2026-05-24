@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const WEDDING_DATE = new Date("2026-09-25T14:00:00");
 
@@ -36,86 +37,84 @@ export default function Hero() {
   return (
     <section
       id="uvod"
-      className="min-h-screen flex flex-col items-center justify-center relative px-4 py-20"
+      className="min-h-screen flex flex-col items-center relative overflow-hidden bg-black"
     >
-      {/* Placeholder for hero image */}
-      <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-gradient-to-b from-cream via-cream to-burgundy/5" />
-        {/* When you have the image, replace with:
-        <Image src="/hero.jpg" alt="Róbert a Alexandra" fill className="object-cover opacity-30" />
-        */}
+      {/* Hero Photo - native 16:9, no cropping */}
+      <div className="relative w-full aspect-[16/9] flex-shrink-0">
+        <Image
+          src="/hero.jpg"
+          alt="Róbert a Alexandra"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-top"
+        />
+        {/* Bottom fade to black — blends photo into section bg */}
+        <div className="absolute inset-x-0 bottom-0 h-1/6 bg-gradient-to-b from-transparent via-black/50 to-black" />
       </div>
 
-      <div className="relative z-10 text-center max-w-3xl mx-auto">
-        {/* Names */}
-        <h1 className="font-great-vibes text-6xl sm:text-7xl md:text-8xl text-burgundy mb-4">
-          Róbert & Alexandra
-        </h1>
+      {/* Content on black, pulled up just slightly over fade */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-start text-center px-4 pt-8 pb-20 w-full">
+        <div className="max-w-3xl w-full">
+          {/* Names */}
+          <h1 className="font-great-vibes text-5xl sm:text-7xl md:text-8xl text-cream mb-3 leading-tight drop-shadow-lg">
+            Róbert &amp; Alexandra
+          </h1>
 
-        {/* Subtitle */}
-        <p className="font-playfair text-xl sm:text-2xl text-dark/80 mb-2">
-          Budeme mať svadbu!
-        </p>
+          {/* Date */}
+          <p className="font-playfair text-lg sm:text-2xl text-cream/90 font-medium tracking-wide mb-10">
+            25. september 2026
+            <span className="text-cream/40 mx-2">·</span>
+            Bardejov
+          </p>
 
-        {/* Date */}
-        <p className="font-playfair text-2xl sm:text-3xl text-burgundy font-semibold mb-12">
-          25. september 2026
-        </p>
-
-        {/* Countdown */}
-        {mounted && (
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mb-12">
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 sm:p-6 shadow-lg border border-burgundy/20 min-w-[80px]">
-              <span className="font-playfair text-3xl sm:text-4xl font-bold text-burgundy block">
-                {timeLeft.days}
-              </span>
-              <span className="text-sm text-dark/70">dní</span>
+          {/* Countdown */}
+          {mounted && (
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-5 mb-10">
+              {[
+                { value: timeLeft.days, label: "dní" },
+                { value: timeLeft.hours, label: "hodín" },
+                { value: timeLeft.minutes, label: "minút" },
+                { value: timeLeft.seconds, label: "sekúnd" },
+              ].map((unit) => (
+                <div
+                  key={unit.label}
+                  className="bg-white/5 backdrop-blur-sm rounded-lg p-3 sm:p-5 shadow-lg border border-cream/15 min-w-[68px] sm:min-w-[88px]"
+                >
+                  <span className="font-playfair text-2xl sm:text-4xl font-bold text-cream block">
+                    {unit.value}
+                  </span>
+                  <span className="text-xs sm:text-sm text-cream/70">{unit.label}</span>
+                </div>
+              ))}
             </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 sm:p-6 shadow-lg border border-burgundy/20 min-w-[80px]">
-              <span className="font-playfair text-3xl sm:text-4xl font-bold text-burgundy block">
-                {timeLeft.hours}
-              </span>
-              <span className="text-sm text-dark/70">hodín</span>
-            </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 sm:p-6 shadow-lg border border-burgundy/20 min-w-[80px]">
-              <span className="font-playfair text-3xl sm:text-4xl font-bold text-burgundy block">
-                {timeLeft.minutes}
-              </span>
-              <span className="text-sm text-dark/70">minút</span>
-            </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 sm:p-6 shadow-lg border border-burgundy/20 min-w-[80px]">
-              <span className="font-playfair text-3xl sm:text-4xl font-bold text-burgundy block">
-                {timeLeft.seconds}
-              </span>
-              <span className="text-sm text-dark/70">sekúnd</span>
-            </div>
-          </div>
-        )}
+          )}
 
-        {/* CTA Button */}
-        <a
-          href="#rsvp"
-          className="inline-block px-8 py-4 rounded-full bg-burgundy text-white font-semibold text-lg shadow-lg hover:bg-burgundy-dark hover:scale-105 transition-all"
-        >
-          Potvrdiť účasť
-        </a>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg
-            className="w-6 h-6 text-burgundy"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+          {/* CTA Button */}
+          <a
+            href="#rsvp"
+            className="inline-block px-8 py-4 rounded-full bg-burgundy text-white font-semibold text-lg shadow-lg hover:bg-burgundy-dark hover:scale-105 transition-all"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
+            Potvrdiť účasť
+          </a>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce z-10">
+        <svg
+          className="w-6 h-6 text-cream/70"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
       </div>
     </section>
   );
