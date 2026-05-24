@@ -21,9 +21,9 @@ export default function Home() {
         <Reception />
         <Schedule />
         <Accommodation />
-        <Tips />
         <Dresscode />
         <RSVP />
+        <Tips />
       </main>
       <Footer />
     </>

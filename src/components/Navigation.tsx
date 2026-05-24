@@ -9,8 +9,8 @@ const navItems = [
   { href: "#hostina", label: "Hostina" },
   { href: "#organizacia", label: "Organizácia" },
   { href: "#ubytovanie", label: "Ubytovanie" },
-  { href: "#tipy", label: "Tipy v okolí" },
   { href: "#dresscode", label: "Dresscode" },
+  { href: "#tipy", label: "Tipy v okolí" },
 ];
 
 export default function Navigation() {
