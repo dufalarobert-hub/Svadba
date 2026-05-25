@@ -8,6 +8,7 @@ const navItems = [
   { href: "#obrad", label: "Obrad" },
   { href: "#hostina", label: "Hostina" },
   { href: "#organizacia", label: "Organizácia" },
+  { href: "#doprava", label: "Doprava" },
   { href: "#ubytovanie", label: "Ubytovanie" },
   { href: "#dresscode", label: "Dresscode" },
   { href: "#tipy", label: "Tipy v okolí" },
@@ -64,10 +65,25 @@ export default function Navigation() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-full bg-burgundy text-white"
-          aria-label="Menu"
+          className="lg:hidden inline-flex items-center gap-2 px-4 h-10 rounded-full bg-burgundy text-white text-sm font-semibold shadow-md hover:bg-burgundy-dark active:scale-95 transition-all"
+          aria-label={isMobileMenuOpen ? "Zavrieť menu" : "Otvoriť menu"}
+          aria-expanded={isMobileMenuOpen}
         >
-          {isMobileMenuOpen ? "✕" : "☰"}
+          {isMobileMenuOpen ? (
+            <>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              <span>Zavrieť</span>
+            </>
+          ) : (
+            <>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <span>Menu</span>
+            </>
+          )}
         </button>
       </div>
 

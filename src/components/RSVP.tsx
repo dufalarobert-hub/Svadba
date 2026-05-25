@@ -9,7 +9,7 @@ export default function RSVP() {
             Potvrdenie účasti
           </h2>
           <p className="text-white/80 text-lg">
-            Tešíme sa na vašu odpoveď do <strong>30. júna 2026</strong>
+            Tešíme sa na vašu odpoveď do <strong>15. augusta 2026</strong>
           </p>
         </div>
 

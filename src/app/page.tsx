@@ -4,6 +4,7 @@ import OurStory from "@/components/OurStory";
 import Ceremony from "@/components/Ceremony";
 import Reception from "@/components/Reception";
 import Schedule from "@/components/Schedule";
+import Transport from "@/components/Transport";
 import Accommodation from "@/components/Accommodation";
 import Tips from "@/components/Tips";
 import Dresscode from "@/components/Dresscode";
@@ -20,6 +21,7 @@ export default function Home() {
         <Ceremony />
         <Reception />
         <Schedule />
+        <Transport />
         <Accommodation />
         <Dresscode />
         <RSVP />

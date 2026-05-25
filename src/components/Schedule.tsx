@@ -1,6 +1,7 @@
 export default function Schedule() {
   const schedule = [
-    { time: "15:00", event: "Obrad", icon: "church" },
+    { time: "14:30", event: "Príchod hostí pred kostol", icon: "couple" },
+    { time: "15:00", event: "Začiatok obradu", icon: "church" },
     { time: "16:00", event: "Presun do Stodoly", icon: "car" },
     { time: "16:00 - 17:00", event: "Recepcia", icon: "reception" },
     { time: "17:15", event: "Príchod novomanželov", icon: "couple" },
@@ -132,7 +133,7 @@ export default function Schedule() {
             <strong>5 minút autom</strong> (2 km).
           </p>
           <p className="text-dark/80 mt-2">
-            Každý sa presunie <strong>vlastným autom</strong> - parkovanie je k dispozícii priamo pri reštaurácii.
+            Každý sa presunie <strong>autami</strong> – parkovanie je k dispozícii priamo pri reštaurácii.
           </p>
         </div>
       </div>

@@ -32,7 +32,7 @@ export default function Reception() {
                 </svg>
                 <div>
                   <span className="font-semibold text-dark">Čas začiatku</span>
-                  <p className="text-dark/80">17:00</p>
+                  <p className="text-dark/80">17:30</p>
                 </div>
               </div>
 

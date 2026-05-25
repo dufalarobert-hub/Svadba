@@ -47,7 +47,7 @@ export default function Ceremony() {
                 </svg>
                 <div>
                   <span className="font-semibold text-dark">Začiatok obradu</span>
-                  <p className="text-dark/80">14:00</p>
+                  <p className="text-dark/80">15:00</p>
                 </div>
               </div>
 

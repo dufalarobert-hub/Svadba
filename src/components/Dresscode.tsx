@@ -41,13 +41,13 @@ export default function Dresscode() {
             </div>
           </div>
 
-          <p className="text-xl text-dark mb-6">
-            Nemáme pevne stanovený dress code – chceme, aby ste sa cítili príjemne.
-          </p>
-          <p className="text-dark/80 mb-8">
-            Budeme však radi, ak váš outfit bude ladený do{" "}
-            <span className="font-playfair font-bold text-burgundy text-xl">
-              tmavých farieb
+          <p className="text-lg text-dark/90 leading-relaxed">
+            Dresscode nemáme pevne stanovený. Chceme, aby ste sa cítili príjemne
+            a obliekli si niečo slávnostné, v čom sa budete cítiť dobre
+            a pripravení ovládnuť parket. Ak budete chcieť doladiť outfit
+            k atmosfére nášho dňa, potešia nás{" "}
+            <span className="font-playfair font-semibold text-burgundy">
+              elegantné tmavšie a tlmenejšie odtiene
             </span>.
           </p>
 
