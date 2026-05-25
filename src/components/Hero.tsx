@@ -37,9 +37,9 @@ export default function Hero() {
   return (
     <section
       id="uvod"
-      className="min-h-screen flex flex-col items-center relative overflow-hidden bg-black"
+      className="min-h-screen flex flex-col items-center relative overflow-hidden bg-cream"
     >
-      {/* Hero Photo - native 16:9, no cropping */}
+      {/* Hero Photo - native 16:9, fades into cream */}
       <div className="relative w-full aspect-[16/9] flex-shrink-0">
         <Image
           src="/hero.jpg"
@@ -49,22 +49,22 @@ export default function Hero() {
           sizes="100vw"
           className="object-cover object-top"
         />
-        {/* Bottom fade to black — blends photo into section bg */}
-        <div className="absolute inset-x-0 bottom-0 h-1/6 bg-gradient-to-b from-transparent via-black/50 to-black" />
+        {/* Bottom fade to cream — blends photo into section bg */}
+        <div className="absolute inset-x-0 bottom-0 h-1/6 bg-gradient-to-b from-transparent via-cream/60 to-cream" />
       </div>
 
-      {/* Content on black, pulled up just slightly over fade */}
+      {/* Content on cream */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-start text-center px-4 pt-8 pb-20 w-full">
         <div className="max-w-3xl w-full">
           {/* Names */}
-          <h1 className="font-great-vibes text-5xl sm:text-7xl md:text-8xl text-cream mb-3 leading-tight drop-shadow-lg">
+          <h1 className="font-great-vibes text-5xl sm:text-7xl md:text-8xl text-burgundy mb-3 leading-tight">
             Róbert &amp; Alexandra
           </h1>
 
           {/* Date */}
-          <p className="font-playfair text-lg sm:text-2xl text-cream/90 font-medium tracking-wide mb-10">
+          <p className="font-playfair text-lg sm:text-2xl text-burgundy font-medium tracking-wide mb-10">
             25. september 2026
-            <span className="text-cream/40 mx-2">·</span>
+            <span className="text-burgundy/40 mx-2">·</span>
             Bardejov
           </p>
 
@@ -79,12 +79,12 @@ export default function Hero() {
               ].map((unit) => (
                 <div
                   key={unit.label}
-                  className="bg-white/5 backdrop-blur-sm rounded-lg p-3 sm:p-5 shadow-lg border border-cream/15 min-w-[68px] sm:min-w-[88px]"
+                  className="bg-white/80 backdrop-blur-sm rounded-lg p-3 sm:p-5 shadow-lg border border-burgundy/20 min-w-[68px] sm:min-w-[88px]"
                 >
-                  <span className="font-playfair text-2xl sm:text-4xl font-bold text-cream block">
+                  <span className="font-playfair text-2xl sm:text-4xl font-bold text-burgundy block">
                     {unit.value}
                   </span>
-                  <span className="text-xs sm:text-sm text-cream/70">{unit.label}</span>
+                  <span className="text-xs sm:text-sm text-dark/70">{unit.label}</span>
                 </div>
               ))}
             </div>
@@ -103,7 +103,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce z-10">
         <svg
-          className="w-6 h-6 text-cream/70"
+          className="w-6 h-6 text-burgundy/70"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
