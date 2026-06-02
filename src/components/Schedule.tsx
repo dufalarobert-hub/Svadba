@@ -77,6 +77,11 @@ export default function Schedule() {
           Harmonogram nášho veľkého dňa
         </p>
 
+        <p className="text-center text-dark/70 italic max-w-2xl mx-auto -mt-8 mb-12">
+          Bližšie organizačné informácie vám dáme vedieť v dostatočnom
+          predstihu pred svadbou.
+        </p>
+
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
@@ -136,12 +141,6 @@ export default function Schedule() {
             Každý sa presunie <strong>autami</strong> – parkovanie je k dispozícii priamo pri reštaurácii.
           </p>
         </div>
-
-        {/* Poznámka */}
-        <p className="mt-8 text-center text-dark/70 italic max-w-2xl mx-auto">
-          Bližšie organizačné informácie vám dáme vedieť v dostatočnom
-          predstihu pred svadbou.
-        </p>
       </div>
     </section>
   );
