@@ -39,8 +39,8 @@ export default function Hero() {
       id="uvod"
       className="min-h-screen flex flex-col items-center relative overflow-hidden bg-cream"
     >
-      {/* Hero Photo - native 16:9, fades into cream */}
-      <div className="relative w-full aspect-[16/9] flex-shrink-0">
+      {/* Hero Photo - full 3:2 on mobile (no heavy crop), 16:9 on larger screens */}
+      <div className="relative w-full aspect-[3/2] sm:aspect-[16/9] flex-shrink-0">
         <Image
           src="/hero.jpg"
           alt="Róbert a Alexandra"

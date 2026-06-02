@@ -6,7 +6,6 @@ import Reception from "@/components/Reception";
 import Schedule from "@/components/Schedule";
 import Transport from "@/components/Transport";
 import Accommodation from "@/components/Accommodation";
-import Tips from "@/components/Tips";
 import Dresscode from "@/components/Dresscode";
 import RSVP from "@/components/RSVP";
 import Footer from "@/components/Footer";
@@ -25,7 +24,6 @@ export default function Home() {
         <Accommodation />
         <Dresscode />
         <RSVP />
-        <Tips />
       </main>
       <Footer />
     </>

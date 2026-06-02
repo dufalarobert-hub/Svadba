@@ -3,15 +3,13 @@
 import { useState, useEffect } from "react";
 
 const navItems = [
-  { href: "#uvod", label: "Úvod" },
   { href: "#nas-pribeh", label: "Náš príbeh" },
   { href: "#obrad", label: "Obrad" },
   { href: "#hostina", label: "Hostina" },
-  { href: "#organizacia", label: "Organizácia" },
+  { href: "#organizacia", label: "Harmonogram" },
   { href: "#doprava", label: "Doprava" },
   { href: "#ubytovanie", label: "Ubytovanie" },
   { href: "#dresscode", label: "Dresscode" },
-  { href: "#tipy", label: "Tipy v okolí" },
 ];
 
 export default function Navigation() {

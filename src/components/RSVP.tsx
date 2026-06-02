@@ -16,16 +16,6 @@ export default function RSVP() {
         <div className="bg-cream rounded-lg p-6 md:p-10 shadow-xl">
           <RSVPForm />
         </div>
-
-        <p className="text-white/60 text-sm mt-8 text-center">
-          Máte otázky? Napíšte nám na{" "}
-          <a
-            href="mailto:svadba@example.com"
-            className="text-white underline hover:no-underline"
-          >
-            svadba@example.com
-          </a>
-        </p>
       </div>
     </section>
   );

@@ -27,11 +27,11 @@ export default function OurStory() {
 
         <p className="text-dark/85 text-base sm:text-lg leading-relaxed text-center max-w-3xl mx-auto mb-12">
           Náš príbeh sa možno nezačal tak romanticky ako iné love story.
-          Stretli sme sa v momente, keď to nikto z nás nečakal, no prijatie
+          Stretli sme sa v momente, keď to ani jeden z nás nečakal, no prijatie
           pozvania na <span className="font-semibold text-burgundy">Gambačik 10ku</span>{" "}
-          bolo jedno z najlepších rozhodnutí. Odvtedy sme jeden v druhom našli
-          domov, pochopenie a bezpečie byť sami sebou. Naučili sme sa podporovať
-          sa v tom, čo milujeme, rešpektovať svet toho druhého a vedieť, že
+          bolo jedným z najlepších rozhodnutí. Odvtedy sme jeden v druhom našli
+          domov, pochopenie a bezpečie byť sami sebou. Naučili sme sa navzájom
+          podporovať v tom, čo milujeme, rešpektovať svet toho druhého a vedieť, že
           nech sa deje čokoľvek, vždy stojíme jeden pri druhom.
         </p>
 
@@ -42,7 +42,7 @@ export default function OurStory() {
             className="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scroll-smooth"
             style={{ scrollbarWidth: "none" }}
           >
-            {storyPhotos.map((photo, i) => (
+            {storyPhotos.map((photo) => (
               <div
                 key={photo.src}
                 className="snap-center flex-shrink-0 w-56 sm:w-64 md:w-72"
@@ -58,9 +58,6 @@ export default function OurStory() {
                     />
                   </div>
                 </div>
-                <p className="text-center text-burgundy/60 text-xs mt-2 font-playfair">
-                  {i + 1} / {storyPhotos.length}
-                </p>
               </div>
             ))}
           </div>

@@ -136,6 +136,12 @@ export default function Schedule() {
             Každý sa presunie <strong>autami</strong> – parkovanie je k dispozícii priamo pri reštaurácii.
           </p>
         </div>
+
+        {/* Poznámka */}
+        <p className="mt-8 text-center text-dark/70 italic max-w-2xl mx-auto">
+          Bližšie organizačné informácie vám dáme vedieť v dostatočnom
+          predstihu pred svadbou.
+        </p>
       </div>
     </section>
   );
