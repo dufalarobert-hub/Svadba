@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL || "";
+const GOOGLE_SCRIPT_URL = (process.env.GOOGLE_SCRIPT_URL || "").trim();
 
 interface OsobaData {
   meno: string;
@@ -75,22 +75,29 @@ export async function POST(request: Request) {
       const response = await fetch(url, {
         method: "GET",
         redirect: "follow",
+        cache: "no-store",
       });
 
       const responseText = await response.text();
       responses.push(responseText);
 
-      // Skontroluj chybu
-      if (responseText.includes("Stránka nenalezena") || responseText.includes("Page not found")) {
-        throw new Error("Google Script not found");
+      // Apps Script vracia {"success":true} pri zápise, {"status":"ok"} keď neprišli
+      // parametre, a HTML chybovú stránku keď je URL/deployment zlý. Route predtým
+      // vracala success naslepo a tiché chyby prepadli — tu overíme reálny výsledok.
+      if (!responseText.includes('"success"')) {
+        console.error("RSVP Apps Script neuložil riadok. Odpoveď:", responseText.slice(0, 300));
+        throw new Error(
+          `Apps Script nezapísal (HTTP ${response.status}): ${responseText.slice(0, 200)}`
+        );
       }
     }
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("RSVP Error:", error);
+    const detail = error instanceof Error ? error.message : String(error);
+    console.error("RSVP Error:", detail);
     return NextResponse.json(
-      { error: "Nepodarilo sa uložiť odpoveď" },
+      { error: "Nepodarilo sa uložiť odpoveď", detail },
       { status: 500 }
     );
   }
