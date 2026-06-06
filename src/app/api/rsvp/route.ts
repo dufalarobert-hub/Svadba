@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 
-const GOOGLE_SCRIPT_URL = (process.env.GOOGLE_SCRIPT_URL || "").trim();
+// Funkčná Apps Script URL zadrôtovaná priamo. Env premenná GOOGLE_SCRIPT_URL vo
+// Verceli mala staré deployment ID a vracala 404, preto ju vedome NEpoužívame.
+// Toto je append-only endpoint do RSVP tabu v Google Sheete.
+// Ak nasadíš nový deployment skriptu (nové /s/AKfyc... ID), zmeň túto URL.
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwRPD2t-Ad0qFuu-nrIGkk17HvX58xWbgWc4SoILh4N3vALl8kLMOWzGpBYS3kn1liR/exec";
 
 interface OsobaData {
   meno: string;
