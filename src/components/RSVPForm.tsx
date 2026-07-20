@@ -111,6 +111,7 @@ const INVITED_GUESTS = [
   "Paloma Morice",
   "Štefánia Cingeľová",
   "Ján Cingeľ",
+  "Denisa Gduľová",
   "Zuzana Hanobiková",
   "Martin Hanobik",
   "Anna Hanobiková",
