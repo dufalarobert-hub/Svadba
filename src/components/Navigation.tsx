@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const navItems = [
   { href: "#nas-pribeh", label: "Náš príbeh" },
@@ -15,6 +17,10 @@ const navItems = [
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Kotvy fungujú len na hlavnej stránke – z podstránok treba ísť cez "/"
+  const anchor = (href: string) => (pathname === "/" ? href : `/${href}`);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,25 +41,35 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo / Names */}
         <a
-          href="#uvod"
+          href={anchor("#uvod")}
           className="font-great-vibes text-2xl text-burgundy hover:text-burgundy-dark transition-colors"
         >
           R & A
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-5">
           {navItems.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={anchor(item.href)}
               className="text-sm font-medium text-dark hover:text-burgundy transition-colors"
             >
               {item.label}
             </a>
           ))}
+          <Link
+            href="/instrukcie"
+            className={`text-sm font-semibold transition-colors border-b-2 pb-0.5 ${
+              pathname === "/instrukcie"
+                ? "text-burgundy border-burgundy"
+                : "text-burgundy border-burgundy/30 hover:border-burgundy"
+            }`}
+          >
+            Inštrukcie
+          </Link>
           <a
-            href="#rsvp"
+            href={anchor("#rsvp")}
             className="px-5 py-2 rounded-full bg-burgundy text-white font-semibold text-sm shadow-md hover:bg-burgundy-dark hover:scale-105 transition-all"
           >
             Potvrdiť účasť
@@ -92,15 +108,22 @@ export default function Navigation() {
             {navItems.map((item) => (
               <a
                 key={item.href}
-                href={item.href}
+                href={anchor(item.href)}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-dark hover:text-burgundy transition-colors py-2 border-b border-burgundy/10"
               >
                 {item.label}
               </a>
             ))}
+            <Link
+              href="/instrukcie"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-burgundy font-semibold py-2 border-b border-burgundy/10"
+            >
+              Inštrukcie
+            </Link>
             <a
-              href="#rsvp"
+              href={anchor("#rsvp")}
               onClick={() => setIsMobileMenuOpen(false)}
               className="mt-2 px-5 py-3 rounded-full bg-burgundy text-white font-semibold text-center shadow-md hover:bg-burgundy-dark transition-all"
             >

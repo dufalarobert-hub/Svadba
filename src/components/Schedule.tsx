@@ -1,11 +1,14 @@
 export default function Schedule() {
   const schedule = [
-    { time: "14:30", event: "Príchod hostí pred kostol", icon: "couple" },
-    { time: "15:00", event: "Začiatok obradu", icon: "church" },
-    { time: "16:00", event: "Presun do Stodoly", icon: "car" },
-    { time: "16:00 - 17:00", event: "Recepcia", icon: "reception" },
-    { time: "17:15", event: "Príchod novomanželov", icon: "couple" },
-    { time: "17:30", event: "Hostina a začiatok zábavy", icon: "party" },
+    { time: "13:30", event: "Príchod hostí k Bazilike sv. Egídia", icon: "couple" },
+    { time: "14:00 - 14:45", event: "Obrad", icon: "church" },
+    { time: "14:45 - 15:15", event: "Fotenie", icon: "reception" },
+    { time: "15:15", event: "Presun do Stodoly", icon: "car" },
+    { time: "15:30 - 16:30", event: "Recepcia vo vonkajších priestoroch", icon: "reception" },
+    { time: "16:30", event: "Príchod novomanželov", icon: "couple" },
+    { time: "17:30", event: "Večera a začiatok zábavy", icon: "party" },
+    { time: "22:00", event: "Bufetové stoly", icon: "party" },
+    { time: "00:00", event: "Čepčenie", icon: "music" },
   ];
 
   const getIcon = (type: string) => {
