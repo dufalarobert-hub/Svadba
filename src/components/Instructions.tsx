@@ -29,7 +29,7 @@ const program = [
   {
     time: "16:30",
     title: "Príchod novomanželov",
-    note: "Dufaloviiiiiiiiiii",
+    note: "Dufalovciiiiiiiiiii",
   },
   {
     time: "17:00",
@@ -99,11 +99,11 @@ const zornickaHostia = [
   "Alojz Vykloukal",
   "Andrea Smetanová",
   "Anna Pollino",
-  "Barbora Bartlová",
+  "Barbora Bartlova",
   "Danka Vaneková",
   "Denisa Kianicová",
   "Dominik Hašek",
-  "Dominika Leváková",
+  "Dominika Levák",
   "Filip Zeman",
   "Janka Gregorová",
   "Lenka Harciniková",
@@ -247,7 +247,7 @@ export default function Instructions() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="bg-cream rounded-lg p-5 border border-burgundy/10">
                   <h4 className="font-playfair text-xl text-burgundy mb-1">
-                    Penzión Lipka
+                    Stredisko Lipka
                   </h4>
                   <p className="text-sm text-dark/70">Duklianska 2988, Bardejov</p>
                   <p className="text-sm text-dark/70 mt-1">
@@ -267,12 +267,23 @@ export default function Instructions() {
                 </div>
               </div>
 
-              <div className="bg-burgundy/5 rounded-md p-5 border-l-4 border-burgundy">
+              <div className="bg-burgundy/5 rounded-md p-5 border-l-4 border-burgundy space-y-3">
                 <p>
-                  Noc <strong>z piatka na sobotu hradíme my</strong> – berte to
-                  ako naše poďakovanie za to, že ste prišli. Ak by ste to chceli
-                  nejako zohľadniť pri svadobnom dare, potešíme sa, ale nie je
-                  to nič, čo by sme očakávali. Hlavné je, že tam s nami budete.
+                  Noc <strong>z piatka na sobotu hradíme my</strong>.
+                </p>
+                <p>
+                  Ak prichádzate už vo štvrtok, štvrtková noc je na vás. Podľa
+                  izby a penziónu to vyjde na{" "}
+                  <strong>25 – 40 € na osobu</strong>.
+                </p>
+              </div>
+
+              <div className="bg-cream rounded-md p-5 border-l-4 border-burgundy/40">
+                <p>
+                  <strong>Prídete neskoro v noci?</strong> Nevadí, ráta sa s
+                  tým. Kľúče budú pripravené v boxoch priamo na mieste, takže sa
+                  dostanete dnu aj keď dorazíte po polnoci. Nikoho nebudete
+                  musieť budiť.
                 </p>
               </div>
 
