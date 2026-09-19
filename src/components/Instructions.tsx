@@ -235,48 +235,6 @@ export default function Instructions() {
             </div>
           </Card>
 
-          {/* Gratulácie */}
-          <Card title="Gratulácie">
-            <div className="space-y-4 text-dark/90 leading-relaxed">
-              <p>
-                Po obrade <strong>nebudeme mať klasické gratulácie</strong> pred
-                kostolom. Namiesto toho nám gratuláciu zanecháte až v Stodole –
-                nahráte nám ju <strong>na video</strong> alebo napíšete{" "}
-                <strong>odkaz na obraz</strong>.
-              </p>
-              <p>
-                Chceli by sme z toho mať spomienku, ku ktorej sa budeme vracať
-                aj o pár rokov. Družičky vás na mieste nasmerujú. Ďakujeme!
-              </p>
-            </div>
-          </Card>
-
-          {/* Program */}
-          <Card title="Program dňa">
-            <ol className="space-y-5">
-              {program.map((item) => (
-                <li
-                  key={item.time}
-                  className="border-l-2 border-burgundy/25 pl-5"
-                >
-                  <div className="flex flex-wrap items-baseline gap-x-3">
-                    <span className="font-playfair text-burgundy font-semibold text-lg">
-                      {item.time}
-                    </span>
-                    <span className="font-semibold text-dark">
-                      {item.title}
-                    </span>
-                  </div>
-                  {item.note && (
-                    <p className="text-dark/70 text-[15px] leading-relaxed mt-1">
-                      {item.note}
-                    </p>
-                  )}
-                </li>
-              ))}
-            </ol>
-          </Card>
-
           {/* Ubytovanie */}
           <Card title="Kde budete spať">
             <div className="space-y-5 text-dark/90 leading-relaxed">
@@ -351,6 +309,49 @@ export default function Instructions() {
               </div>
             </div>
           </Card>
+
+          {/* Gratulácie */}
+          <Card title="Gratulácie">
+            <div className="space-y-4 text-dark/90 leading-relaxed">
+              <p>
+                Po obrade <strong>nebudeme mať klasické gratulácie</strong> pred
+                kostolom. Namiesto toho nám gratuláciu zanecháte až v Stodole –
+                nahráte nám ju <strong>na video</strong> alebo napíšete{" "}
+                <strong>odkaz na obraz</strong>.
+              </p>
+              <p>
+                Chceli by sme z toho mať spomienku, ku ktorej sa budeme vracať
+                aj o pár rokov. Družičky vás na mieste nasmerujú. Ďakujeme!
+              </p>
+            </div>
+          </Card>
+
+          {/* Program */}
+          <Card title="Program dňa">
+            <ol className="space-y-5">
+              {program.map((item) => (
+                <li
+                  key={item.time}
+                  className="border-l-2 border-burgundy/25 pl-5"
+                >
+                  <div className="flex flex-wrap items-baseline gap-x-3">
+                    <span className="font-playfair text-burgundy font-semibold text-lg">
+                      {item.time}
+                    </span>
+                    <span className="font-semibold text-dark">
+                      {item.title}
+                    </span>
+                  </div>
+                  {item.note && (
+                    <p className="text-dark/70 text-[15px] leading-relaxed mt-1">
+                      {item.note}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </Card>
+
         </div>
       </div>
     </section>
