@@ -4,27 +4,27 @@ const program = [
   {
     time: "13:30",
     title: "Príchod k Bazilike sv. Egídia",
-    note: "Autá prosím zaparkujte v okolí námestia. Pred Bazilikou vás bude čakať malé občerstvenie a niečo na zahriatie.",
+    note: "Autá, prosím, zaparkujte v okolí námestia. Pred bazilikou vás bude čakať malé občerstvenie a niečo na zahriatie.",
   },
   {
     time: "14:00 – 14:45",
     title: "Obrad",
-    note: "Po skončení obradu nemáme klasické gratulácie. Gratuláciu nám budete môcť zanechať až v Stodole – na video alebo ako odkaz na obraz. Takto si vytvoríme trvácnu spomienku. Družičky vás nasmerujú. Ďakujeme!",
+    note: "Po skončení obradu nemáme klasické gratulácie. Gratuláciu nám budete môcť zanechať v stodole vo forme videa alebo nám napísať odkaz na obraz. Takto si vytvoríme trvácnu spomienku. Družičky vás nasmerujú. Ďakujeme!",
   },
   {
     time: "14:45 – 15:15",
     title: "Fotenie",
-    note: "Po obrade budeme mať priestor na skupinové fotky. Radi by sme vytvorili niekoľko väčších skupín. Fotografka ich bude vyhlasovať.",
+    note: "Po obrade budeme mať priestor na skupinové fotky. Radi by sme vytvorili niekoľko väčších skupín. Fotografka bude jednotlivé skupiny postupne vyvolávať.",
   },
   {
     time: "15:15",
-    title: "Presun do Stodoly",
-    note: "Prosím použite na presun vaše autá, ktorými ste prišli ku Bazilike. Budeme vďační, pokiaľ prevezmete aj hostí, ktorí sú bez auta. Ďakujeme!",
+    title: "Presun do stodoly",
+    note: "Prosím, na presun použite autá, ktorými ste prišli k bazilike. Budeme vďační, ak odveziete aj hostí, ktorí sú bez auta. Ďakujeme!",
   },
   {
     time: "15:30 – 16:30",
-    title: "Recepcia v Stodole",
-    note: "Party warm up. Recepcia sa koná vo vonkajších priestoroch Stodoly. Občerstvite sa, dajte si welcome drink, zanechajte nám gratuláciu na video alebo odkaz na obraz a pripravte sa na oslavu!",
+    title: "Recepcia v stodole",
+    note: "Party warm-up. Recepcia sa koná vo vonkajších priestoroch stodoly. Občerstvite sa, dajte si welcome drink, zanechajte nám gratuláciu na video alebo odkaz na obraz a pripravte sa na oslavu! Tešíme sa!",
   },
   {
     time: "16:30",
@@ -33,8 +33,8 @@ const program = [
   },
   {
     time: "17:00",
-    title: "Privítanie hostí a príhovory",
-    note: "Príhovory svedkov a odvážlivcov?",
+    title: "Privítanie hostí, príhovory svedkov a odvážlivcov?",
+    note: "",
   },
   {
     time: "17:30",
@@ -43,17 +43,17 @@ const program = [
   },
   {
     time: "18:30",
-    title: "Prvý manželský tanec a otvorenie parketu",
+    title: "1. manželský tanec a otvorenie parketu",
     note: "Pokúsime sa vás ohúriť našou choreo. Možno to bude freestyle a možno nie.",
   },
   {
     time: "20:30",
-    title: "Sľúbili sme punčáky, budú punčáky!",
-    note: "Budeme radi, keď vezmete ku krájaniu torty prskavky a prídete za nami. Prskavky vám rozdajú družičky.",
+    title: "Sľúbili sme punčáky, bude niečo iné!",
+    note: "Ale punčáky nájdete samozrejme v candy bare. Budeme radi, keď si ku krájaniu torty vezmete prskavky a pridáte sa k nám. Prskavky vám rozdajú družičky.",
   },
   {
     time: "22:00",
-    title: "Začiatok bufetových stolov",
+    title: "Otvorenie bufetových stolov",
     note: "Všetci zo „západu“ ochutnajte máčanku! A samozrejme pirohy.",
   },
   {
