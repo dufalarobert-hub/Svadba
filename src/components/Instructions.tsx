@@ -75,7 +75,6 @@ const lipkaHostia = [
   "Andrea Hlavenková",
   "Andrea Měchurová",
   "Andrej Grajciar",
-  "Dan Drábek",
   "Jachym Vaněk",
   "Jiří Štaffa",
   "Karel Fischer",
@@ -100,6 +99,7 @@ const zornickaHostia = [
   "Andrea Smetanová",
   "Anna Pollino",
   "Barbora Bartlova",
+  "Dan Drábek",
   "Danka Vaneková",
   "Denisa Kianicová",
   "Dominik Hašek",
@@ -112,11 +112,9 @@ const zornickaHostia = [
   "Maria Hašek",
   "Martin Bartl",
   "Martin Kmeť",
-  "Martin Švábek",
   "Martina Gregorová",
   "Matúš Ďurajka",
   "Miloš Gregor",
-  "Radovan Kianica",
   "Richard Vojtech",
   "Róbert Ďurajka",
   "Soňa Kmeťová",
@@ -132,47 +130,72 @@ const zornickaHostia = [
 function Card({
   title,
   children,
+  id,
 }: {
   title: string;
   children: React.ReactNode;
+  id?: string;
 }) {
   return (
-    <div className="bg-white rounded-lg p-7 md:p-9 shadow-md border border-burgundy/10">
+    <div
+      id={id}
+      className="scroll-mt-28 bg-white rounded-lg p-7 md:p-9 shadow-md border border-burgundy/10"
+    >
       <h3 className="font-playfair text-2xl text-burgundy mb-4">{title}</h3>
       {children}
     </div>
   );
 }
 
+const dlazdice = [
+  { href: "#ubytovanie", label: "Ubytovanie" },
+  { href: "#parkovanie", label: "Parkovanie" },
+  { href: "#harmonogram", label: "Harmonogram" },
+];
+
 export default function Instructions() {
   return (
     <section id="instrukcie" className="pt-10 pb-20 px-4 bg-white">
       <div className="max-w-3xl mx-auto">
         <h2 className="section-title">Inštrukcie</h2>
-        <p className="section-subtitle">
-          Všetko dôležité na jednom mieste
-        </p>
+
+        {/* Rýchle odkazy */}
+        <div className="grid grid-cols-3 gap-3 mb-8">
+          {dlazdice.map((d) => (
+            <a
+              key={d.href}
+              href={d.href}
+              className="rounded-lg bg-burgundy px-3 py-4 text-center text-white font-semibold text-sm sm:text-base shadow-md hover:bg-burgundy-dark hover:-translate-y-0.5 transition-all"
+            >
+              {d.label}
+            </a>
+          ))}
+        </div>
 
         <div className="space-y-6">
           {/* Úvod */}
           <div className="bg-cream rounded-lg p-7 md:p-9 border border-burgundy/10 text-dark/90 text-lg leading-relaxed space-y-4">
             <p>
-              Ďakujeme, že si na nás v ten deň spravíte čas a prídete ho
-              osláviť s nami. Znamená to pre nás naozaj veľa.
+              Milí svadobčania, svadba sa blíži a radi by sme vám dali bližšie
+              informácie o tom, ako bude celý deň prebiehať.
             </p>
             <p>
-              Aby ste sa nemuseli nič pýtať a mohli si to hlavne užiť, dali
-              sme sem všetko podstatné – kde zaparkovať, ako sa dostať do
-              Stodoly, čo kedy bude a kde budete spať.
+              Nájdete tu všetko potrebné – kde zaparkovať, ako sa dostanete do
+              Stodoly, čo kedy bude a kde budete spať. Tešíme sa na vás!
             </p>
           </div>
 
           {/* Parkovanie */}
-          <Card title="Parkovanie pri Bazilike">
+          <Card title="Parkovanie pri Bazilike" id="parkovanie">
             <div className="space-y-4 text-dark/90 leading-relaxed">
               <p>
-                Parkovanie okolo celého Radničného námestia je{" "}
-                <strong>platené</strong>. Pár tipov, kde zaparkovať:
+                Svadobný obrad bude v{" "}
+                <strong className="text-burgundy">Bazilike sv. Egídia</strong>,
+                ktorá stojí v srdci historického centra na Radničnom námestí.
+              </p>
+              <p>
+                Parkovanie okolo celého námestia je <strong>platené</strong>.
+                Pár tipov, kde zaparkovať:
               </p>
               <ul className="space-y-2 list-none">
                 <li className="flex gap-3">
@@ -229,14 +252,15 @@ export default function Instructions() {
               </p>
               <p className="bg-cream rounded-md p-4 border-l-4 border-burgundy">
                 <strong>Auto odporúčame nechať pri Stodole.</strong> Parkovanie
-                je priamo pri reštaurácii a odvozy na ubytovanie máme
-                vybavené – nemusíte teda riešiť, ako sa dostanete spať.
+                je priamo pri reštaurácii a odvozy máme vybavené{" "}
+                <strong>od 22:00 do 4:00</strong> – odvezú vás na ubytovanie
+                alebo domov, takže sa o to nemusíte starať.
               </p>
             </div>
           </Card>
 
           {/* Ubytovanie */}
-          <Card title="Kde budete spať">
+          <Card title="Kde budete spať" id="ubytovanie">
             <div className="space-y-5 text-dark/90 leading-relaxed">
               <p>
                 Ubytovanie máme zarezervované v dvoch penziónoch, oba sú na
@@ -267,23 +291,28 @@ export default function Instructions() {
                 </div>
               </div>
 
-              <div className="bg-burgundy/5 rounded-md p-5 border-l-4 border-burgundy space-y-3">
-                <p>
-                  Noc <strong>z piatka na sobotu hradíme my</strong>.
-                </p>
-                <p>
-                  Ak prichádzate už vo štvrtok, štvrtková noc je na vás. Podľa
-                  izby a penziónu to vyjde na{" "}
-                  <strong>25 – 40 € na osobu</strong>.
-                </p>
+              <div>
+                <h4 className="font-playfair text-lg text-burgundy mb-3">
+                  Cena ubytovania
+                </h4>
+                <div className="bg-burgundy/5 rounded-md p-5 border-l-4 border-burgundy space-y-3">
+                  <p>
+                    Noc z piatka na sobotu, teda{" "}
+                    <strong>v svadobný deň, hradíme my</strong>.
+                  </p>
+                  <p>
+                    Ak prichádzate už vo štvrtok, túto noc si prosím uhraďte na
+                    recepcii. Podľa izby a ubytovania to vyjde na{" "}
+                    <strong>25 – 40 €</strong>.
+                  </p>
+                </div>
               </div>
 
               <div className="bg-cream rounded-md p-5 border-l-4 border-burgundy/40">
                 <p>
                   <strong>Prídete neskoro v noci?</strong> Nevadí, ráta sa s
                   tým. Kľúče budú pripravené v boxoch priamo na mieste, takže sa
-                  dostanete dnu aj keď dorazíte po polnoci. Nikoho nebudete
-                  musieť budiť.
+                  dostanete dnu aj keď dorazíte po polnoci.
                 </p>
               </div>
 
@@ -321,24 +350,8 @@ export default function Instructions() {
             </div>
           </Card>
 
-          {/* Gratulácie */}
-          <Card title="Gratulácie">
-            <div className="space-y-4 text-dark/90 leading-relaxed">
-              <p>
-                Po obrade <strong>nebudeme mať klasické gratulácie</strong> pred
-                kostolom. Namiesto toho nám gratuláciu zanecháte až v Stodole –
-                nahráte nám ju <strong>na video</strong> alebo napíšete{" "}
-                <strong>odkaz na obraz</strong>.
-              </p>
-              <p>
-                Chceli by sme z toho mať spomienku, ku ktorej sa budeme vracať
-                aj o pár rokov. Družičky vás na mieste nasmerujú. Ďakujeme!
-              </p>
-            </div>
-          </Card>
-
           {/* Program */}
-          <Card title="Program dňa">
+          <Card title="Program dňa" id="harmonogram">
             <ol className="space-y-5">
               {program.map((item) => (
                 <li
